@@ -17,7 +17,7 @@ for word in keywords:
     keyname = word[0][:4].upper()
 
     # time.sleep(randint(10, 20))
-    pytrend.build_payload(word, geo= "US", gprop='news', timeframe="all_2008")
+    pytrend.build_payload(word, geo= "US-CA-800", gprop='news', timeframe="all_2008")
     data = pytrend.interest_over_time()
     data.to_csv(keyname + ".csv")
 
