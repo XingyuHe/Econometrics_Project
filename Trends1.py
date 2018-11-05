@@ -7,16 +7,17 @@ from random import randint
 from pytrends.request import TrendReq
 
 
+
 pytrend = TrendReq()
 
 os.chdir("/Users/xhe/PycharmProjects/Econometrics_Project/")
-keywords = [["Free trade"]]
+keywords = [["Voting"], ["Vote"]]
 
 for word in keywords:
     keyname = word[0][:4].upper()
 
     # time.sleep(randint(10, 20))
-    pytrend.build_payload(word, geo= "US", gprop='news', timeframe="all")
+    pytrend.build_payload(word, geo= "US", gprop='news', timeframe="all_2008")
     data = pytrend.interest_over_time()
     data.to_csv(keyname + ".csv")
 
